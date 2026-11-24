@@ -1,0 +1,20 @@
+name: Standard CI
+
+on: 
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "building ..."
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "testing ..."
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deploying ..."

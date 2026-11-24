@@ -1,0 +1,17 @@
+name: Independent build workflow
+
+on:
+  workflow_call:
+    outputs:
+      build_result:
+        description: Resultado do build
+        value: ${{ jobs.build.outputs.step_result }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      step_result: ${{ steps.main_build_step.conclusion }}
+    steps:
+      - run: echo "building ..."
+        id: main_build_step
